@@ -1,0 +1,166 @@
+
+*{
+    margin:0;
+    padding:0; 
+    box-sizing: border-box;
+    font-family: 'EB Garamond', serif;
+    color: #303030;
+}
+/* background color for all pages */
+.background{
+    background-color: #F8F6F1;
+}
+.normal-text{
+    text-align: center;
+    font-size: 20px;
+}
+.flex{
+    display: flex;
+}
+/* centers vertically */
+.items-center{
+    align-items: center;
+}
+/* centers horizontally */
+.items-justify{
+    justify-content: space-between;
+}
+/* for all buttons */
+.btn{
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* for all big buttoons */
+.btn-bg{
+    padding: 15px 25px;
+}
+/* for all small buttons */
+.btn-sm{
+    font-size: 12px;
+    padding: 4px 15px;
+}
+/* for all dark buttons */
+.btn-dark{
+    background-color: #4e4e4e;
+}
+.btn-red{
+    background-color:red;
+}
+.btn-blue{
+    background-color: blue;
+}
+/* HOME PAGE */
+/* margin-top-right-bottom-left */
+.nav{
+    margin:20px 160px 15px 80px;
+}
+.logo-img{
+    align-items: center;
+    margin-right:40px ;
+}
+  /* for sign up and login dropdown */
+.signup-container {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .signup-select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f9f9f9;
+    font-size: 18px;
+  }
+  .signup-container:hover .dropdown-content {
+    display: block;
+  }
+/* whole mid section of landing page */
+.main-section{
+    margin-left: 150px;
+    margin-right: 120px;
+    margin-bottom: 100px;
+}
+/* left part of hero image */
+.hero-section{
+    height: 400px;
+    width: 400px;
+    margin-top:40px ;
+    margin-right:50px ;
+}
+
+/* main heading */
+.hero-text{
+    font-family: 'Forum', display;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom:20px ;
+}
+.learn{
+    margin-top:40px ;
+    margin-left:85px ;
+}
+/* main image from home page */
+.hero-img{
+    height: 500px;
+    width: 580px;
+}
+.featured-box{
+    margin: 40px 80px;
+}
+.ft-img{
+    height: 200px;
+    width: 200px;
+}
+/* two buttons from home page */
+.buttons{
+    margin-left:500px ;
+    margin-bottom: 40px;
+}
+/* For forms */
+.f-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-heading{
+    font-family: 'Fraunces', serif;
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+.form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  input[type="text"], input[type="email"], input[type="password"],input[type="file"],input[type="date"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(19, 11, 11);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
