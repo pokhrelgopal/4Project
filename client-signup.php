@@ -14,7 +14,7 @@ include 'connection.php';
     </div>
     <h2 class="form-heading">Create new Account</h2>
     <p class="normal-text">Register yourself as a client</p>
-    <form class="form">
+    <form class="form" method="post" action="client-signup.php">
         <div class="form-group">
             <label for="fullname">Full Name:</label>
             <input type="text" id="fullname" name="cname" placeholder="Enter your full name">

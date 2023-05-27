@@ -60,22 +60,20 @@ include 'connection.php';
     </section>
     <h2 class="normal-text" style="font-size: 35px;">Featured Lawyers</h2>
     <div class="featured-box flex items-center items-justify">
-        <form action="index.php">
+        <div>
+            <img src="images\dummy-profile.png" alt="" class="ft-img">
             <div>
-                <img src="images\dummy-profile.png" alt="" class="ft-img">
-                <div>
-                    <p>Name</p>
-                    <p><em><strong>Criminal Lawyer</strong></em></p>
-                    <p style="margin-bottom: 10px;">Location</p>
-                    <button class="btn btn-sm btn-dark" name="view">View</button>
-                </div>
+                <p>Name</p>
+                <p><em><strong>Criminal Lawyer</strong></em></p>
+                <p style="margin-bottom: 10px;">Location</p>
+                <a href="login.php"><button class="btn btn-sm btn-dark" name="view">View</button></a>
             </div>
-        </form>
+        </div>
     </div>
     <?php
-    if (isset($_POST['view'])) {
-        header("Location:login.php");
-    }
+    // if (isset($_POST['view'])) {
+    //     header("Location:login.php");
+    // }
     ?>
     <div class="buttons">
         <button class="btn btn-dark btn-bg" style="margin-right: 20px;">view more lawyers</button>
