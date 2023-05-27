@@ -54,31 +54,37 @@ include 'connection.php';
             <p class="normal-text">Your trusted destination for comprehensive legal assistance, covering a wide range of
                 areas.
             </p>
-            <button class="learn btn btn-dark btn-bg">learn more</button>
+            <a href="login.php"><button class="learn btn btn-dark btn-bg">learn more</button></a>
         </div>
         <img src="images\hero.webp" alt="" class="hero-img">
     </section>
     <h2 class="normal-text" style="font-size: 35px;">Featured Lawyers</h2>
     <div class="featured-box flex items-center items-justify">
-        <div>
-            <img src="images\dummy-profile.png" alt="" class="ft-img">
+        <?php
+        $sql = "SELECT * FROM lawyer LIMIT 5";
+        $result = $con->query($sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row['lname'];
+            $exp = $row['expertise'];
+            $loc = $row['location'];
+            $img = $row['pro_pic'];
+            echo "
             <div>
-                <p>Name</p>
-                <p><em><strong>Criminal Lawyer</strong></em></p>
-                <p style="margin-bottom: 10px;">Location</p>
-                <a href="login.php"><button class="btn btn-sm btn-dark" name="view">View</button></a>
+                <img src='$img' alt='' class='ft-img'>
+                <div>
+                    <p>$name</p>
+                    <p><em><strong>$exp</strong></em></p>
+                    <p style='margin-bottom: 10px;'>$loc</p>
+                    <a href='login.php'><button class='btn btn-sm btn-dark' name='view'>View</button></a>
+                </div>
             </div>
-        </div>
+            ";
+        }
+        ?>
     </div>
-    <?php
-    // if (isset($_POST['view'])) {
-    //     header("Location:login.php");
-    // }
-    ?>
     <div class="buttons">
-        <button class="btn btn-dark btn-bg" style="margin-right: 20px;">view more lawyers</button>
-        <button class="btn btn-dark btn-bg" style="margin-left: 20px;">book a consultation
-            <button>
+        <a href="login.php"><button class="btn btn-dark btn-bg" style="margin-right: 20px;">view more lawyers</button></a>
+        <a href="login.php"><button class="btn btn-dark btn-bg" style="margin-left: 20px;">book a consultation <button></a>
     </div>
 </body>
 

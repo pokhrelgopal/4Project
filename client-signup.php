@@ -57,6 +57,7 @@ include 'connection.php';
         if ($result) {
             header("Location:login.php");
         } else {
+            echo "Error: " . mysqli_error($con);
         }
     }
 
