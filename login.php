@@ -41,27 +41,25 @@ include 'connection.php';
 
 </html>
 <?php
-session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $role = $_POST['role'];
-    // echo "$role";
-    // echo "$email";
-    // echo "$password";
-
+    
     if ($role == 'client') {
         $sql = "select * from client where email='$email' and password='$password'";
         echo $sql;
         $result = $con->query($sql);
-        if ($result) {
+        $num=mysqli_num_rows($result);
+        if ($num==1) {
+            session_start();
             $_SESSION['email'] = $email;
+            header("Location:client.php");
             echo "
             <script>
             alert('successful');
             </script>
             ";
-            header("Location:client.php");
         } else {
             echo "
             <script>
@@ -72,14 +70,16 @@ if (isset($_POST['login'])) {
     } else {
         $sql = "select * from lawyer where lemail='$email' and lpassword='$password'";
         $result = $con->query($sql);
-        if ($result) {
+        $num=mysqli_num_rows($result);
+        if ($num==1) {
+            session_start();
             $_SESSION['email'] = $email;
+            header("Location:lawyer.php");
             echo "
             <script>
             alert('successful');
             </script>
             ";
-            header("Location:lawyer.php");
         } else {
             echo "
             <script>

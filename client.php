@@ -46,20 +46,19 @@ if ($result = $con->query($sql)) {
                     $sql = "select * from lawyer";
                     $result = $con->query($sql);
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $id=$row['lid'];
+                        $id = $row['lid'];
                         $name = $row['lname'];
                         $exp = $row['expertise'];
                         $loc = $row['location'];
                         $img = $row['pro_pic'];
                         echo "
-            
                             <div>
                                 <img src='$img' alt='' class='ft-img'>
                                 <div>
                                     <p>$name</p>
                                     <p><em><strong>$exp</strong></em></p>
                                     <p style='margin-bottom: 10px;'>$loc</p>
-                                    <a href='lawyer-single-profile.php/?id=$id'><button class='btn btn-sm btn-dark' name='view'>View</button></a>
+                                    <a href='lawyer-single-profile.php?id=$id'><button class='btn btn-sm btn-dark' name='view'>View</button></a>
                                 </div>
                             </div>
                             ";

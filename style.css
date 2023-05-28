@@ -41,17 +41,21 @@
 /* for all small buttons */
 .btn-sm{
     font-size: 12px;
-    padding: 4px 15px;
+    padding: 8px 15px;
 }
 /* for all dark buttons */
 .btn-dark{
     background-color: #4e4e4e;
 }
 .btn-red{
-    background-color:red;
+    background-color:rgb(199, 5, 5);
 }
 .btn-blue{
-    background-color: blue;
+  background-color: blue;
+}
+
+.btn-green{
+  background-color: rgb(2, 102, 2);
 }
 /* HOME PAGE */
 /* margin-top-right-bottom-left */
@@ -230,5 +234,14 @@ a:link{
 }
 a:hover{
   font-weight: bold;
+}
+/* style for message sent by a client to lawyer for lawyers page */
+.request-box{
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-bottom: 15px;
+  margin-right: 350px;
+  font-size: 20px;
+  border-radius: 8px;
 }
 
