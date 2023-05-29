@@ -34,7 +34,7 @@ include 'connection.php';
             <input class="btn btn-dark btn-bg" type="submit" name="login" value="Login" style="width: 100%;">
         </div>
         <div class="normal-text">
-            <p>Don't have an account?<a href="#">Sign up</a></p>
+            <p>Don't have an account?<a href="signup.php">Sign up</a></p>
         </div>
     </form>
 </body>

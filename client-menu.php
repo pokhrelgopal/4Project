@@ -16,7 +16,7 @@
     <a href="/4project/client-profile-update.php">
         <div class="menu-item">
             <p>
-                Update Profile
+                Edit Profile
             </p>
         </div>
     </a>

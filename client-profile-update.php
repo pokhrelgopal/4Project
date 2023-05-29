@@ -3,11 +3,9 @@ include 'connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php include 'head.php'; ?>
 </head>
-
 <?php
 session_start();
 if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
@@ -27,7 +25,6 @@ if ($result = $con->query($sql)) {
     }
 }
 ?>
-
 <body class="background">
     <nav class="nav flex items-center items-justify">
         <img src="scale.png" alt="" class="logo-img">
@@ -43,7 +40,7 @@ if ($result = $con->query($sql)) {
             <form class="form" id="myForm" action="client-profile-update.php" method="post" style="width: 600px;">
                 <div class="form-group">
                     <label for="fullname">Full Name:</label>
-                    <input type="text" name="cname" id="fullname" value="<?php echo $name; ?>">
+                    <input type="text" name="name" id="fullname" value="<?php echo $name; ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -70,16 +67,17 @@ if ($result = $con->query($sql)) {
 </html>
 <?php
 if (isset($_POST['updateClient'])) {
-    $cname = $_POST['cname'];
+    $cname = $_POST['name'];
     $cemail = $_POST['email'];
     $cpassword = $_POST['password'];    
     $cphone = $_POST['phone'];
     
 
-    $sql = "UPDATE client SET cname = '$cname', email = '$cemail', phone = '$cphone' password = '$cpassword' WHERE cid = '$id'";
+    $sql = "UPDATE client SET cname = '$cname', email = '$cemail', phone = '$cphone', password = '$cpassword' WHERE cid = '$id'";
     echo $sql;
-    if (mysqli_query($con, $sql)) {
-        echo "<script>
+    if ($con->query($sql)) {
+        echo "
+        <script>
         location.href='client.php'
         </script>";
     } else {

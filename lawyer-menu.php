@@ -16,7 +16,7 @@
     <a href="lawyer-profile-update.php">
         <div class="menu-item">
             <p>
-                Update Profile
+                Edit Profile
             </p>
         </div>
     </a>

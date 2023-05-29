@@ -94,7 +94,11 @@ if ($result = $con->query($sql)) {
                         ";
                     }
                 }else{
-
+                   echo "
+                   <div style='font-size: 20px;color: grey;'>
+                   <em>You dont have any appointment requests yet.</em>
+                   <div>
+                   ";
                 }
             }
 
