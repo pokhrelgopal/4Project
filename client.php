@@ -31,27 +31,26 @@ if ($result = $con->query($sql)) {
 <body class="background">
     <nav class="nav flex items-center items-justify">
         <img src="scale.png" alt="" class="logo-img">
-        <p><?php echo $name; ?></p>
+        <p class="profile-name"><?php echo $name; ?></p>
     </nav>
-    <section class="main-section">
-        <div class="grid grid-cols-4 gap-4">
-            <div>
+    <section class="flex items-justify">
+        <div>
+            <?php
+            include 'client-menu.php';
+            ?>
+        </div>
+        <div class="display-section">
+            <div class="lawyers-display">
                 <?php
-                include 'client-menu.php';
-                ?>
-            </div>
-            <div class="col-span-3">
-                <div class="featured-box flex items-center items-justify">
-                    <?php
-                    $sql = "select * from lawyer";
-                    $result = $con->query($sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $id = $row['lid'];
-                        $name = $row['lname'];
-                        $exp = $row['expertise'];
-                        $loc = $row['location'];
-                        $img = $row['pro_pic'];
-                        echo "
+                $sql = "select * from lawyer";
+                $result = $con->query($sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['lid'];
+                    $name = $row['lname'];
+                    $exp = $row['expertise'];
+                    $loc = $row['location'];
+                    $img = $row['pro_pic'];
+                    echo "
                             <div>
                                 <img src='$img' alt='' class='ft-img'>
                                 <div>
@@ -62,9 +61,8 @@ if ($result = $con->query($sql)) {
                                 </div>
                             </div>
                             ";
-                    }
-                    ?>
-                </div>
+                }
+                ?>
             </div>
         </div>
     </section>

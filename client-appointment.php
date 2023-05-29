@@ -24,20 +24,19 @@ if ($result = $con->query($sql)) {
     }
 }
 ?>
-
 <body class="background">
     <nav class="nav flex items-center items-justify">
         <img src="scale.png" alt="" class="logo-img">
-        <p><?php echo $name; ?></p>
+        <p class="profile-name"><?php echo $name; ?></p>
     </nav>
-    <section class="main-section">
-        <div class="grid grid-cols-4 gap-4">
+    <section class="">
+        <div class="flex items-justify">
             <div>
                 <?php
                 include 'client-menu.php';
                 ?>
             </div>
-            <div class="col-span-3">
+            <div class="">
                 client Appointments
             </div>
         </div>

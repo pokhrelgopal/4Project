@@ -141,7 +141,7 @@ if (isset($_POST['updateLawyer'])) {
     move_uploaded_file($tempCphoto, $folder3);
 
     $sql = "UPDATE lawyer SET lname = '$lname', lemail = '$lemail', lpassword = '$lpassword', lphone = '$lphone', location = '$location', expertise = '$expertise', dob = '$dob', c_pic = '$folder3', l_pic = '$folder2', pro_pic = '$folder1' WHERE lid = '$lid'";
-    echo $sql;
+    // echo $sql;
     if (mysqli_query($con, $sql)) {
         echo "<script>
         location.href='lawyer.php'

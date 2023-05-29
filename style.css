@@ -245,3 +245,53 @@ a:hover{
   border-radius: 8px;
 }
 
+/* lawyers display for clients */
+.display-section{
+  margin-top: 30px;
+  margin-right: 100px;
+}
+.lawyers-display{
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows:200px 200px ;
+  /* gap: 20px; */
+  row-gap: 150px;
+  column-gap:30px
+}
+/* form for booking appointments */
+.overlay {
+  border-radius: 20px;
+  padding: 20px;
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  background-color: rgb(189, 128, 128);
+  height: fit-content;
+  width: 500px;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.msg-form {
+  position: relative;
+}
+
+.form-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 5px 8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+
+}

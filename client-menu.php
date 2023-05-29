@@ -1,4 +1,4 @@
-<div class="menu-items">
+<div class="menu-items" style="margin-top: 30px;margin-left: 50px;">
     <a href="/4project/client.php">
         <div class="menu-item">
             <p>
@@ -21,7 +21,7 @@
         </div>
     </a>
     <form action="client-menu.php" method="post">
-        <button type="submit" name="logout">Logout</button>
+        <button type="submit" name="logout" class="btn btn-dark" style="padding:10px;">Logout</button>
     </form>
     <?php
     if(isset($_POST['logout'])){

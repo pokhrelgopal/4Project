@@ -4,44 +4,6 @@
 
 <head>
     <?php include 'head.php'; ?>
-    <style>
-        .overlay {
-            border-radius: 20px;
-            padding: 20px;
-            position: absolute;
-            top: 5%;
-            left: 30%;
-            background-color: rgb(189, 128, 128);
-            height: fit-content;
-            width: 500px;
-        }
-
-        textarea {
-            width: 100%;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .msg-form {
-            position: relative;
-        }
-
-        .form-close-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            cursor: pointer;
-            padding: 5px 8px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-
-        }
-    </style>
 </head>
 <?php
 session_start();
@@ -92,36 +54,38 @@ if ($result = $con->query($sql)) {
                 <p class="profile-name"><?php echo $cname; ?></p>
             </div>
         </nav>
-        <section class="lawyer-section">
+        <section class="flex">
             <div>
                 <?php
                 include 'client-menu.php';
                 ?>
             </div>
-            <div>
-                <div class="lawyer-info">
-                    <span>Name: </span><?php echo $name; ?>
-                </div>
-                <div class="lawyer-info">
-                    <span>Email:</span><?php echo $email; ?>
-                </div>
-                <div class="lawyer-info">
-                    <span>Contact: </span><?php echo $phone; ?>
-                </div>
-                <div class="lawyer-info">
-                    <span>Age: </span><?php echo $dob; ?>
-                </div>
-                <div class="lawyer-info">
-                    <span>Expertise: </span><?php echo $expertise; ?>
-                </div>
-                <div class="lawyer-info">
-                    <span>Location: </span><?php echo $location; ?>
-                </div>
+            <div class="flex" style="margin-top:30px;margin-left:100px;">
+                <div style="margin-right:60px;">
+                    <div class="lawyer-info">
+                        <span>Name: </span><?php echo $name; ?>
+                    </div>
+                    <div class="lawyer-info">
+                        <span>Email:</span><?php echo $email; ?>
+                    </div>
+                    <div class="lawyer-info">
+                        <span>Contact: </span><?php echo $phone; ?>
+                    </div>
+                    <div class="lawyer-info">
+                        <span>Age: </span><?php echo $dob; ?>
+                    </div>
+                    <div class="lawyer-info">
+                        <span>Expertise: </span><?php echo $expertise; ?>
+                    </div>
+                    <div class="lawyer-info">
+                        <span>Location: </span><?php echo $location; ?>
+                    </div>
 
-                <button id="showBtn" class="btn btn-dark btn-bg" style="margin-left: 20px;">book a consultation <button>
+                    <button id="showBtn" class="btn btn-dark btn-bg">book a consultation <button>
 
+                </div>
+                <img src="<?php echo $pro_pic; ?>" alt="" height="400px" style="border-radius: 3px;">
             </div>
-            <img src="<?php echo $pro_pic; ?>" alt="" height="400px" style="border-radius: 3px;">
         </section>
         <div id="overlay" class="overlay hidden">
             <form class="msg-form" action="lawyer-single-profile.php?id=<?php echo $id; ?>" method="post">
