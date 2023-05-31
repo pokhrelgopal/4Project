@@ -17,6 +17,7 @@ include 'connection.php';
         .request-detail {
             margin-bottom: 10px;
         }
+        
     </style>
 </head>
 
@@ -37,7 +38,7 @@ if ($result = $con->query($sql)) {
 }
 ?>
 
-<body class="background">
+<body class="background" style="position: relative;">
     <nav class="nav flex items-center items-justify">
         <img src="scale.png" alt="" class="logo-img">
         <p class="profile-name"><?php echo $lname; ?></p>
@@ -109,28 +110,38 @@ if ($result = $con->query($sql)) {
 
         </div>
     </section>
+
 </body>
 
 </html>
 <?php
 if (isset($_POST['remove'])) {
-    $hidden_id=$_POST['hidden_id'];
+    $hidden_id = $_POST['hidden_id'];
     // echo $hidden_id;
-    $sql="DELETE FROM appointment WHERE ap_id='$hidden_id'";
-    $result=$con->query($sql);
-    if($result){
-        // header("Location:accepted-appointment.php");
+    $sql = "DELETE FROM appointment WHERE ap_id='$hidden_id'";
+    $result = $con->query($sql);
+    if ($result) {
         echo "
+        <div id='successMessage' class='success-message'>
+             Removed Successfully.
+        </div>
         <script>
-        window.location.href='accepted-appointment.php'
-        </script> 
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    window.location.href='accepted-appointment.php'
+                }, 2500);
+            }
+        });
+     </script>
         ";
-    }else{
-        echo"Error removing";
 
+    } else {
+        echo "Error removing";
     }
-    
 } else {
 }
-
 ?>

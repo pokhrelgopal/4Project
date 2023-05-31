@@ -143,9 +143,24 @@ if (isset($_POST['updateLawyer'])) {
     $sql = "UPDATE lawyer SET lname = '$lname', lemail = '$lemail', lpassword = '$lpassword', lphone = '$lphone', location = '$location', expertise = '$expertise', dob = '$dob', c_pic = '$folder3', l_pic = '$folder2', pro_pic = '$folder1' WHERE lid = '$lid'";
     // echo $sql;
     if (mysqli_query($con, $sql)) {
-        echo "<script>
-        location.href='lawyer.php'
-        </script>";
+        echo "
+        <div id='successMessage' class='success-message'>
+            Your profile was updated.
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    location.href='lawyer.php'
+                }, 2500);
+            }
+        });
+        </script>
+        
+        ";
     } else {
         echo "<script>alert('Profile Update Failed!')</script>";
     }

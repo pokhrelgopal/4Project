@@ -25,7 +25,7 @@ include 'connection.php';
         </div>
         <div class="form-group">
             <label for="phone">Phone:</label>
-            <input type="text" id="phone"name="phone" placeholder="Enter your phone number">
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
@@ -42,23 +42,46 @@ include 'connection.php';
             <p>Already have an account?<a href="login.php">Login</a></p>
         </div>
     </form>
+    <div id="successMessage" class="success-message">
+        Account Created Successfully.
+    </div>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 2000);
+            }
+        });
+    </script> -->
+
 </body>
+
 </html>
 <?php
-    // Check if form was submitted
-    if (isset($_POST['signup'])) {
-        // 
-        $cname = $_POST['cname'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $phone = $_POST['phone'];
-        $ins = "INSERT INTO client (cname,email,password,phone) VALUES ('$cname','$email','$password','$phone') ";
-        $result = $con->query($ins);
-        if ($result) {
-            header("Location:login.php");
-        } else {
-            echo "Error: " . mysqli_error($con);
-        }
+// Check if form was submitted
+if (isset($_POST['signup'])) {
+    // 
+    $cname = $_POST['cname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
+    $ins = "INSERT INTO client (cname,email,password,phone) VALUES ('$cname','$email','$password','$phone') ";
+    $result = $con->query($ins);
+    if ($result) {
+        
+        // echo "Successful";
+        // header("Location:login.php");
+        echo "
+        <div id='successMessage' class='success-message'>
+            Account Created Successfully.
+        </div>
+        ";
+    } else {
+        echo $con->error;
     }
+}
 
 ?>

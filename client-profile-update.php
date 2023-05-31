@@ -77,9 +77,23 @@ if (isset($_POST['updateClient'])) {
     echo $sql;
     if ($con->query($sql)) {
         echo "
+        <div id='successMessage' class='success-message'>
+            Your profile was updated.
+        </div>
         <script>
-        location.href='client.php'
-        </script>";
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    location.href='client.php'
+                }, 2500);
+            }
+        });
+        </script>
+        
+        ";
     } else {
         echo "<script>alert('Profile Update Failed!')</script>";
     }

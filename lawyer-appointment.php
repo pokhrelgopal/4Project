@@ -121,9 +121,21 @@ if (isset($_POST['accept'])) {
     $result=$con->query($sql);
     if($result){
         echo "
-            <script>
-            window.location.href='lawyer-appointment.php'
-            </script> 
+        <div id='successMessage' class='success-message'>
+        Request Accepted.
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'block';
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+                window.location.href='lawyer-appointment.php'
+            }, 2500);
+        }
+    });
+ </script>
             ";
     }else{
         echo "
@@ -140,9 +152,22 @@ if (isset($_POST['decline'])) {
     $result=$con->query($sql);
     if($result){
         echo "
+
+        <div id='successMessage' class='success-message'>
+            Request Rejected.
+        </div>
         <script>
-        window.location.href='lawyer-appointment.php'
-        </script> 
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    window.location.href='lawyer-appointment.php'
+                }, 2500);
+            }
+        });
+     </script>
         ";
 
     }else{

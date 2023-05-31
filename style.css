@@ -296,5 +296,17 @@ textarea {
   color: white;
   border-radius: 50%;
   font-family: sans-serif;
-
 }
+
+.success-message {
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 3px;
+  }

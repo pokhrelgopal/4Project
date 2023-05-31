@@ -160,9 +160,21 @@ if (isset($_POST['send'])) {
     $result = $con->query($sql);
     if ($result) {
         echo "
+        <div id='successMessage' class='success-message'>
+            Request Sent.
+        </div>
         <script>
-        alert('Message Sent');
-        </script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    
+                }, 2500);
+            }
+        });
+     </script>
         ";
     } else {
         echo "
