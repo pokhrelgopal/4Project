@@ -4,6 +4,11 @@
 
 <head>
     <?php include 'head.php'; ?>
+    <style>
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
 </head>
 <?php
 session_start();
@@ -88,8 +93,11 @@ if ($result = $con->query($sql)) {
             </div>
         </section>
         <div id="overlay" class="overlay hidden">
-            <form class="msg-form" action="lawyer-single-profile.php?id=<?php echo $id; ?>" method="post">
-                <p id="hideBtn" class="form-close-btn">X</p>
+            <div>
+                <p id="hideBtn" class="form-close-btn" style="margin: 20px 25px ;">X</p>
+            </div>
+            <form class="msg-form" action="lawyer-single-profile.php?id=<?php echo $id; ?>" method="post" style="margin-top: 30px;">
+
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" value="<?php echo $cname; ?>" disabled>
@@ -108,7 +116,7 @@ if ($result = $con->query($sql)) {
                 </div>
                 <div class="form-group">
                     <label for="Mesege">Messege:</label>
-                    <textarea name="messege" id="" cols="60" rows="10"></textarea>
+                    <textarea name="messege" id="" cols="60" rows="8"></textarea>
                 </div>
                 <div class="form-group">
                     <input class="btn btn-dark btn-bg" type="submit" value="Send" name="send" style="width: 100%;">
@@ -125,6 +133,20 @@ if ($result = $con->query($sql)) {
             hideBtn.addEventListener('click', () => {
                 overlay.classList.add('hidden');
             })
+
+            showBtn.addEventListener('click', () => {
+                overlay.classList.remove('hidden');
+                document.querySelectorAll('body > *:not(#overlay)').forEach(element => {
+                    element.classList.add('blur');
+                });
+            });
+
+            hideBtn.addEventListener('click', () => {
+                overlay.classList.add('hidden');
+                document.querySelectorAll('body > *:not(#overlay)').forEach(element => {
+                    element.classList.remove('blur');
+                });
+            });
         </script>
     </body>
 

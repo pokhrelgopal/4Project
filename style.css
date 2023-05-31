@@ -248,7 +248,7 @@ a:hover{
 
 /* lawyers display for clients */
 .display-section{
-  margin-top: 30px;
+  margin-top: 20px;
   margin-right: 100px;
 }
 .lawyers-display{
@@ -275,6 +275,7 @@ textarea {
   width: 100%;
   border-radius: 5px;
   padding: 10px;
+  font-size: 18px;
 }
 
 .hidden {
@@ -290,9 +291,10 @@ textarea {
   top: 0;
   right: 0;
   cursor: pointer;
-  padding: 5px 8px;
-  background-color: red;
+  padding: 5px 10px;
+  background-color:rgb(199, 5, 5);
   color: white;
   border-radius: 50%;
+  font-family: sans-serif;
 
 }

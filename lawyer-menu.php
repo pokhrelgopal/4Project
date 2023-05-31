@@ -9,7 +9,14 @@
     <a href="lawyer-appointment.php">
         <div class="menu-item">
             <p>
-                Appointments
+                Appointment Requests
+            </p>
+        </div>
+    </a>
+    <a href="accepted-appointment.php">
+        <div class="menu-item">
+            <p>
+                Accepted Appointments
             </p>
         </div>
     </a>

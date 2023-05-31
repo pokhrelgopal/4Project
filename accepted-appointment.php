@@ -49,9 +49,9 @@ if ($result = $con->query($sql)) {
             ?>
         </div>
         <div>
-            <h2 class="apmt-request">Your Appointment Requests</h2>
+            <h2 class="apmt-request">Accepted Appointments</h2>
             <?php
-            $sql = "SELECT * FROM appointment WHERE lid='$lid' and ap_status='none'";
+            $sql = "SELECT * FROM appointment WHERE lid='$lid' and ap_status='true'";
             $result = $con->query($sql);
             if ($result) {
                 if (mysqli_num_rows($result) > 0) {
@@ -73,7 +73,7 @@ if ($result = $con->query($sql)) {
                         echo "
                         <div class='request-box'>
                             <div class='request-detail'>
-                                You have received an appointment request from <strong>$cname</strong>
+                                You have accepted an appointment request from <strong>$cname</strong>
                             </div>
                             <div class='request-detail'>
                                Email: $cemail
@@ -90,8 +90,7 @@ if ($result = $con->query($sql)) {
                             <div>
                             <form action='' method='post'>
                             <input type='hidden' name='hidden_id' value='$ap_id' >
-                            <button type='submit' name='accept' class='btn btn-sm btn-green'>Accept</button>
-                            <button type='submit' name='decline' class='btn btn-sm btn-red'>Reject</button>
+                            <button type='submit' name='remove' class='btn btn-sm btn-green'>Remove</button>
                             </form>
                             </div>
                         </div>
@@ -100,7 +99,7 @@ if ($result = $con->query($sql)) {
                 } else {
                     echo "
                    <div style='font-size: 20px;color: grey;'>
-                   <em>You dont have any appointment requests now.</em>
+                   <em>You dont have any accepted appointment requests now.</em>
                    <div>
                    ";
                 }
@@ -114,42 +113,24 @@ if ($result = $con->query($sql)) {
 
 </html>
 <?php
-if (isset($_POST['accept'])) {
+if (isset($_POST['remove'])) {
     $hidden_id=$_POST['hidden_id'];
     // echo $hidden_id;
-    $sql="UPDATE appointment SET ap_status='true' WHERE ap_id=$hidden_id";
+    $sql="DELETE FROM appointment WHERE ap_id='$hidden_id'";
     $result=$con->query($sql);
     if($result){
+        // header("Location:accepted-appointment.php");
         echo "
-            <script>
-            window.location.href='lawyer-appointment.php'
-            </script> 
-            ";
-    }else{
-        echo "
-       Error
+        <script>
+        window.location.href='accepted-appointment.php'
+        </script> 
         ";
+    }else{
+        echo"Error removing";
+
     }
     
 } else {
 }
-if (isset($_POST['decline'])) {
-    $hidden_id=$_POST['hidden_id'];
-    // echo $hidden_id;
-    $sql="UPDATE appointment SET ap_status='false' WHERE ap_id=$hidden_id";
-    $result=$con->query($sql);
-    if($result){
-        echo "
-        <script>
-        window.location.href='lawyer-appointment.php'
-        </script> 
-        ";
 
-    }else{
-        echo"Error";
-
-    }
-
-} else {
-}
 ?>

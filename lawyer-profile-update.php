@@ -46,7 +46,7 @@ if ($result = $con->query($sql)) {
             include 'lawyer-menu.php';
             ?>
         </div>
-        <div class="" style="margin-right:400px;margin-left:200px;">
+        <div class="" style="margin-right:400px;margin-left:10px;">
             <form class="form" id="myForm" action="lawyer-profile-update.php" method="post" enctype="multipart/form-data" style="margin-top: 0;width: 600px;">
                 <div class="form-group">
                     <label for="fullname">Full Name:</label>
