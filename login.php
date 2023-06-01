@@ -48,7 +48,7 @@ if (isset($_POST['login'])) {
     
     if ($role == 'client') {
         $sql = "select * from client where email='$email' and password='$password'";
-        echo $sql;
+        // echo $sql;
         $result = $con->query($sql);
         $num=mysqli_num_rows($result);
         if ($num==1) {
@@ -62,10 +62,22 @@ if (isset($_POST['login'])) {
             ";
         } else {
             echo "
-            <script>
-            alert('failed');
-            </script>
-            ";
+        <div id='failedMessage' class='failed-message'>
+             Login Failed !
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var failedMessage = document.getElementById('failedMessage');
+            if (failedMessage) {
+                failedMessage.style.display = 'block';
+                setTimeout(function() {
+                    failedMessage.style.display = 'none';
+                    window.location.href='login.php'
+                }, 1500);
+            }
+        });
+     </script>
+        ";
         }
     } else {
         $sql = "select * from lawyer where lemail='$email' and lpassword='$password'";
@@ -82,13 +94,24 @@ if (isset($_POST['login'])) {
             ";
         } else {
             echo "
-            <script>
-            alert('failed');
-            </script>
-            ";
+        <div id='failedMessage' class='failed-message'>
+             Login Failed !
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var failedMessage = document.getElementById('failedMessage');
+            if (failedMessage) {
+                failedMessage.style.display = 'block';
+                setTimeout(function() {
+                    failedMessage.style.display = 'none';
+                    window.location.href='login.php'
+                }, 1500);
+            }
+        });
+     </script>
+        ";
         }
     }
 } else {
-    echo "Error: " . mysqli_error($con);
 }
 ?>

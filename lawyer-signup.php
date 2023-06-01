@@ -98,12 +98,23 @@ include 'connection.php';
         $ins = "INSERT INTO lawyer (lname,lemail,lpassword,dob,lphone,expertise,location,pro_pic,l_pic,c_pic) VALUES ('$lname','$lemail','$lpassword','$dob','$lphone','$expertise','$location','$folder1','$folder2','$folder3') ";
         $result = $con->query($ins);
         if ($result) {
-            // header("Location:login.php");
             echo "
-            <script>
-            window.location.href='login.php'
-            </script> 
-            ";
+        <div id='successMessage' class='success-message'>
+             Account Created Successfully.
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    window.location.href='login.php'
+                }, 1500);
+            }
+        });
+     </script>
+        ";
         } else {
             echo "Error: " . mysqli_error($con);
 

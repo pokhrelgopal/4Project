@@ -91,8 +91,7 @@ if ($result = $con->query($sql)) {
                             <div>
                             <form action='' method='post'>
                             <input type='hidden' name='hidden_id' value='$ap_id' >
-                            <button type='submit' name='remove' class='btn btn-sm btn-green'>Remove</button>
-                            </form>
+                            
                             </div>
                         </div>
                         ";

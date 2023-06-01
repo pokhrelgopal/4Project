@@ -69,7 +69,7 @@ include 'connection.php';
             $loc = $row['location'];
             $img = $row['pro_pic'];
             echo "
-            <div>
+            <div >
                 <img src='$img' alt='' class='ft-img'>
                 <div>
                     <p>$name</p>

@@ -53,7 +53,7 @@ if ($result = $con->query($sql)) {
             include 'client-menu.php';
             ?>
         </div>
-        <div class="" style="margin-right: 600px;margin-top:60px;margin-left:30px;">
+        <div class="" style="margin-right: 200px;margin-top:60px;margin-left:30px;">
             <form action="client.php" method="post" class="flex">
 
                 <input type="text" id="" name="" placeholder="Search by location" style="margin-bottom: 10px;margin-right:20px;width:300px;">
@@ -64,7 +64,7 @@ if ($result = $con->query($sql)) {
             </form>
         </div>
     </section>
-    <div class="display-section flex" style="justify-content: space-around;margin-left:200px">
+    <div class="display-section flex" style="justify-content: space-around;margin-left:250px">
         <div class="lawyers-display">
             <?php
             $sql = "select * from lawyer";
