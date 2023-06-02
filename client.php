@@ -27,6 +27,7 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
     $data = $_SESSION['email'];
 } else {
     $data = '';
+    header('Location:login.php');
 }
 $sql = "select * from client where email='$data'";
 if ($result = $con->query($sql)) {

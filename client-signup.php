@@ -42,21 +42,6 @@ include 'connection.php';
             <p>Already have an account?<a href="login.php">Login</a></p>
         </div>
     </form>
-    <div id="successMessage" class="success-message">
-        Account Created Successfully.
-    </div>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var successMessage = document.getElementById('successMessage');
-            if (successMessage) {
-                successMessage.style.display = 'block';
-                setTimeout(function() {
-                    successMessage.style.display = 'none';
-                }, 2000);
-            }
-        });
-    </script> -->
-
 </body>
 
 </html>

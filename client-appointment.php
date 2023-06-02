@@ -26,6 +26,8 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
     $data = $_SESSION['email'];
 } else {
     $data = '';
+    header("Location:login.php");
+    
 }
 $sql = "select * from client where email='$data'";
 if ($result = $con->query($sql)) {
@@ -35,7 +37,9 @@ if ($result = $con->query($sql)) {
         $name = $row['cname'];
     }
 }
+
 ?>
+
 
 <body class="background">
     <nav class="nav flex items-center items-justify">
@@ -53,7 +57,7 @@ if ($result = $con->query($sql)) {
                 client Appointments
             </div> -->
             <div>
-                <h2 class="apmt-request">Your Appointment Requests</h2>
+                <h2 class="apmt-request">Your Appointment Status</h2>
                 <?php
                 $sql = "SELECT * FROM appointment WHERE cid='$id'";
                 $result = $con->query($sql);

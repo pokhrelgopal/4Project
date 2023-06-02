@@ -3,6 +3,14 @@ include 'connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+session_start();
+if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+    $data = $_SESSION['email'];
+    // echo $data;
+}
+?>
 
 <head>
     <?php include 'head.php'; ?>

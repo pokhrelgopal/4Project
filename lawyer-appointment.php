@@ -26,6 +26,7 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
     $data = $_SESSION['email'];
 } else {
     $data = '';
+    header('Location:login.php');
 }
 $sql = "select * from lawyer where lemail='$data'";
 if ($result = $con->query($sql)) {

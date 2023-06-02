@@ -62,21 +62,21 @@ if (isset($_POST['login'])) {
             ";
         } else {
             echo "
-        <div id='failedMessage' class='failed-message'>
-             Login Failed !
-        </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var failedMessage = document.getElementById('failedMessage');
-            if (failedMessage) {
-                failedMessage.style.display = 'block';
-                setTimeout(function() {
-                    failedMessage.style.display = 'none';
-                    window.location.href='login.php'
-                }, 1500);
-            }
-        });
-     </script>
+            <div id='failedMessage' class='failed-message'>
+                Login Failed !
+            </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var failedMessage = document.getElementById('failedMessage');
+                if (failedMessage) {
+                    failedMessage.style.display = 'block';
+                    setTimeout(function() {
+                        failedMessage.style.display = 'none';
+                        window.location.href='login.php'
+                    }, 1500);
+                }
+            });
+        </script>
         ";
         }
     } else {
@@ -94,22 +94,22 @@ if (isset($_POST['login'])) {
             ";
         } else {
             echo "
-        <div id='failedMessage' class='failed-message'>
-             Login Failed !
-        </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var failedMessage = document.getElementById('failedMessage');
-            if (failedMessage) {
-                failedMessage.style.display = 'block';
-                setTimeout(function() {
-                    failedMessage.style.display = 'none';
-                    window.location.href='login.php'
-                }, 1500);
-            }
-        });
-     </script>
-        ";
+                <div id='failedMessage' class='failed-message'>
+                    Login Failed !
+                </div>
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var failedMessage = document.getElementById('failedMessage');
+                    if (failedMessage) {
+                        failedMessage.style.display = 'block';
+                        setTimeout(function() {
+                            failedMessage.style.display = 'none';
+                            window.location.href='login.php'
+                        }, 1500);
+                    }
+                });
+            </script>
+                ";
         }
     }
 } else {
