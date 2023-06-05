@@ -26,6 +26,7 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
 <body class="background">
     <?php
     if(!$_GET['id']){
+        header("Location:admin.php");
     }
     else{
         $id=$_GET['id'];
@@ -122,7 +123,6 @@ if (isset($_POST['approve'])) {
                 successMessage.style.display = 'block';
                 setTimeout(function() {
                     successMessage.style.display = 'none';
-                    window.location.href='admin.php'
                 }, 1500);
             }
         });
