@@ -4,8 +4,8 @@
     }
 </style>
 <div class="menu-items" style="margin-top: 30px;margin-left: 50px;">
-    <a href="/4project/adminphp">
-        <div class="menu-item <?php if (basename($_SERVER['PHP_SELF']) == 'admin.php') echo "active-menu" ?>" >
+    <a href="/4project/admin.php">
+        <div class="menu-item <?php if (basename($_SERVER['PHP_SELF']) == 'admin.php' || basename($_SERVER['PHP_SELF']) == 'admin-view-profile.php') echo "active-menu" ?>" >
             <p>
                 Approve Lawyers
             </p>

@@ -93,7 +93,7 @@ if ($result = $con->query($sql)) {
                             <div>
                             <form action='' method='post'>
                             <input type='hidden' name='hidden_id' value='$ap_id' >
-                            
+                            </form>
                             </div>
                         </div>
                         ";

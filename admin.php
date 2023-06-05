@@ -40,11 +40,11 @@ if ($result = $con->query($sql)) {
         </div>
         <div class="table-container">
             <?php
-            $sql = "select * from lawyer";
+            $sql = "SELECT * FROM lawyer WHERE status='none'";
             $result = $con->query($sql);
             echo "
             <table cellspacing='30px' align='center'>
-            <caption style='font-size: 30px; margin-bottom: 10px; text-align: center; font-weight:bold;'>Lawyer Details</caption>
+            <caption style='font-size: 30px; margin-bottom: 15px; text-align: center; font-weight:bold;'>Lawyer Details</caption>
                 <tr style='font-size:22px;'>
                     <th>Name</th>
                     <th>Email</th>
@@ -61,10 +61,7 @@ if ($result = $con->query($sql)) {
                     <td style='font-size:20px;'>$name</td>
                     <td style='font-size:20px;'>$email</td>
                     <td>
-                        <form action='' method='post'>
-                            <button type='submit' class='btn btn-sm btn-dark'>View</button>
-                            
-                        </form>
+                        <a href='admin-view-profile.php?id=$id'><button type='submit' class='btn btn-sm btn-dark' name='view'>View&nbsp more&nbsp details</button></a>
                     </td>
                 </tr>
                         ";
@@ -74,11 +71,4 @@ if ($result = $con->query($sql)) {
         </div>
     </section>
 </body>
-
 </html>
-
-<!-- 
-
-<button type='submit' class='btn btn-sm btn-red'>Approve</button>
-<button type='submit' class='btn btn-sm btn-green'>Reject</button>
- -->
