@@ -29,6 +29,7 @@ if ($result = $con->query($sql)) {
         $location = $row['location'];
         $expertise = $row['expertise'];
         $pro_pic = $row['pro_pic'];
+        $status=$row['status'];
     }
 }
 ?>
@@ -36,8 +37,17 @@ if ($result = $con->query($sql)) {
 <body class="background">
     <nav class="nav flex items-center items-justify">
         <img src="scale.png" alt="" class="logo-img">
-        <div>
-            <p class="profile-name"><?php echo $name; ?></p>
+        <div class="profile-name">
+                <?php 
+                echo "<p style='color:#F8F6F1;font-size:20px;'>$name</p>";
+                if($status=='true'){
+                    echo "<p style='color:#F8F6F1;text-align:center'>Verified</p>";
+                }elseif($status=='false'){
+                    echo "Rejected";
+            }
+            
+
+            ?>
         </div>
     </nav>
     <section class="lawyer-section">

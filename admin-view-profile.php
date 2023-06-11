@@ -123,6 +123,7 @@ if (isset($_POST['approve'])) {
                 successMessage.style.display = 'block';
                 setTimeout(function() {
                     successMessage.style.display = 'none';
+                    window.location.href='admin.php'
                 }, 1500);
             }
         });

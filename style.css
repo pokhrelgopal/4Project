@@ -205,9 +205,10 @@
   background-color: rgb(189, 128, 128);
   text-transform: capitalize;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border-radius: 5px;
   color: #F8F6F1;
+  
 }
 
 /* styling menu items */

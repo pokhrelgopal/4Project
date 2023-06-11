@@ -42,7 +42,8 @@ if ($result = $con->query($sql)) {
             <?php
             $sql = "SELECT * FROM lawyer WHERE status='none'";
             $result = $con->query($sql);
-            echo "
+            if (mysqli_num_rows($result) > 0) {
+                echo "
             <table cellspacing='30px' align='center'>
             <caption style='font-size: 30px; margin-bottom: 15px; text-align: center; font-weight:bold;'>Lawyer Details</caption>
                 <tr style='font-size:22px;'>
@@ -51,12 +52,12 @@ if ($result = $con->query($sql)) {
                     <th>Action</th>
                 </tr>
             ";
-            while ($row = mysqli_fetch_assoc($result)) {
-                $id = $row['lid'];
-                $name = $row['lname'];
-                $email = $row['lemail'];
-                $phone = $row['lphone'];
-                echo "
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['lid'];
+                    $name = $row['lname'];
+                    $email = $row['lemail'];
+                    $phone = $row['lphone'];
+                    echo "
                 <tr>
                     <td style='font-size:20px;'>$name</td>
                     <td style='font-size:20px;'>$email</td>
@@ -65,10 +66,20 @@ if ($result = $con->query($sql)) {
                     </td>
                 </tr>
                         ";
+                }
+
+                echo "</table>";
             }
-            echo "</table>";
+            else{
+                echo "
+                   <div style='font-size: 30px;color: #4e4e4e;margin-top:20px;'>
+                   <strong><em>No lawyers to show.</em></strong>
+                   <div>
+                   ";
+            }
             ?>
         </div>
     </section>
 </body>
+
 </html>
